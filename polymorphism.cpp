@@ -12,18 +12,27 @@
 using namespace std;
 
 class ArrayList{
+    /*
    private:
     vector<int> arr;
+
+    */
+   protected:
+     vector<int> arr; // useCase is to make it inheritable and still protecting it 
+      // form the outside the class
+
 public:
     ArrayList() {
-        arr={};  
+       arr={-1,-3,4};
     }
     vector<int> getArray() {return arr;}
-    void add(int x) {arr.push_back(x);}
-    void print() {
+      virtual void add(int x) {arr.push_back(x);}
+         void print() {
+        cout<<"Inside the ArrayList: "<<endl;
          for(int i=0;i<arr.size();i++){
             cout<<arr[i]<<" ";
             }
+            cout<<endl;
     }
     int size() {return arr.size();}
 
@@ -40,7 +49,7 @@ class NonNegativeArrayList : public ArrayList{
           for(int i=0; i<elements.size(); i++) {
            add(elements[i]); // this add method adds all the elements but we want to make 
            // sure that we only need to add the non-negative elements
-           // to achieve this wwe need to override this add method
+           // to achieve this we need to override this add method
           }
      }
     //  NonNegativeArrayList(){};
@@ -49,8 +58,33 @@ class NonNegativeArrayList : public ArrayList{
     void add(int x);   // only declaring the method defintion is written outside the class
       
 } ;
+// defining any method outside the class 
+// syntax--> returntype classname :: method name
+ void NonNegativeArrayList :: add(int x) {
+          if(x<0) return;
+          arr.push_back(x);
+ }
 
 ////////////////////////////////////////////////////////////////
+void print(ArrayList arr) {
+    // the object of the NonNegativeArrayList is the object of the ArrayList
+    //the Derived class objects are the objects of the Base class
+       arr.print();
+}
+// this calls the add() method of the ArrayList even though i pass the object
+// of the NonNegativeArrayList. 
+//But the requirement is that at runtime it should call the add() method
+// of the NonNegativeArrayList
+void addOutside(ArrayList &arr,int x) {
+      arr.add(x);
+      arr.print();
+    // we want the program to determine the object type and call the overriden method
+    // compiler will only look ArrayList method as it is the input type
+    // But we want to look at the NonNegativeArrayList methods when the program is run
+    // so to make sure that the NonNegativeArrayList add method is called we 
+    // need to make the add method of the ArrayList as th
+    
+}
 int main() {
     /*
       ArrayList myArray;
@@ -64,10 +98,16 @@ int main() {
         }
 
     */
-   vector<int> temp={1,-1,3,-5}; 
-   NonNegativeArrayList arrayList(temp);
-   cout<<arrayList.size()<<endl;
+    vector<int> temp={1,-1,3,-5}; 
+  //  NonNegativeArrayList arrayList(temp);
+   
+  //   addOutside(arrayList,-1);
+  //   arrayList.print();
 
+
+    ArrayList* p= new ArrayList();
+        p->add(-3);
+        p->print();
 
       return 0;
 }

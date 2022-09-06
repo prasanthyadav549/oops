@@ -1,4 +1,36 @@
 /*
+
+   --> Abstraction - hiding the  implementation of the methods of the class
+
+
+      Example-  Consider a Bank employee  The calculation of Balance of the Employee is not known the Employee
+        so we make it as a private method
+              class Employee {
+                   
+                   int balance;
+                     int CalculateBalance(){
+                          Do SOME WORK;
+                     }
+
+                    public: 
+
+                      int getBalance(int bankAccount){
+                               CalculateBalance(bankAccount);
+                        }        
+                     
+              }
+
+
+
+
+
+
+
+
+
+
+
+/*
 *  to implement the abstract class in java we use the aabstract keyword
    but in c++ we don't have abstract keyword so we need to use the pure virtual function
 *   A class having atleast one pure virtual funtion is a abstract class
@@ -53,3 +85,10 @@ using namespace std;
      phone->take_selfie();
        return 0;
    }
+
+
+
+   /*
+   Abstract method  - Every inheriting class should implement this method.
+
+   */

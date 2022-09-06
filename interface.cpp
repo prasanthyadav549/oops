@@ -9,4 +9,10 @@ normal methods are written in the interface
    class with only the abstract methods all virtual void methods=0;
 in c++ interfaces are implemented using interface only like we create a derive class of the
   base abstract class containing all the methods
+
+
+
+  -examples:   consider a Bird class and Aeroplane class
+               
+       both the classes implements the Flyable interface
 */

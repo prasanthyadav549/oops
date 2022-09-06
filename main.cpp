@@ -58,10 +58,22 @@ class B: public A{
 
 };
 
-int main(){
-     B b(4);
-     b.print();
+// int coupons(int n,int m,int **stall,int **person,int q,int **query){
+//     int n,m,result=0, p,s,flag;
+//      for(int i=0; i<q; i++){
+//         p=query[i][0];
+//         s=query[i][1];
+//         flag=0;
+//         for(int j=0; j<10; j++){ 
+//              if(person[p-1][j] == stall[s-1][j] && person[p-1][j] == 1) {
+//               flag=1;
+//              }
+//         }
+//          result = result + flag; 
+//      }
+//   return result;
+// }
+
+  
 
 
-   return 0;
-}
