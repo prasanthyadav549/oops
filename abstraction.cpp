@@ -8,8 +8,8 @@
               class Employee {
                    
                    int balance;
-                     int CalculateBalance(){
-                          Do SOME WORK;
+                     int CalculateBalance(int bankAccount){
+                         Actual logic to calculate the balance 
                      }
 
                     public: 
