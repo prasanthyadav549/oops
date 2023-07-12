@@ -74,6 +74,28 @@ class B: public A{
 //   return result;
 // }
 
+
+int fun(vector<int> v,vector<int> magic, long long m) {
+     long long sum=0;
+      for(int i=0; i<v.size(); i++) sum += v[i];
+        if(sum<=m) return 0;
+      vector<pair<long long , int> > temp;
+      for(int i=0; i<v.size(); i++) {
+            temp.push_back({abs(v[i]-magic[i]),i});
+      }
+      sort(temp.rbegin(), temp.rend());
+      int ans =0;
+      for(int i=0; i<temp.size(); i++) {
+            int ind = temp[i].second;
+            sum = sum - v[ind]+magic[ind];
+            ans++;
+            if(sum<=m) return ans;
+
+      }
+      return -1;
+       
+}
+
   
 
 

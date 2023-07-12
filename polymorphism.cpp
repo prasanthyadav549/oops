@@ -122,7 +122,7 @@ using namespace std;
  *       1--> commpile time polymorphsim
  *       2--> run time polymorphsim
  * 
- *  compile time polymorphsim: ctp can be acheived by operator overloading or function overloading.
+ *  compile time polymorphsim: ctp can be achieved by operator overloading or function overloading.
  * 
  *      function overloading: when we have different functions with same 
  *            the compiler decides the function based on the 
